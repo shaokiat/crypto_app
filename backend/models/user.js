@@ -57,7 +57,7 @@ const userSchema = new mongoose.Schema(
 userSchema
   .virtual("password")
   .set(function (password) {
-    // create temporary variable for password
+    // create a temporarity variable called _password
     this._password = password;
     // generate salt
     this.salt = this.makeSalt();
@@ -69,8 +69,8 @@ userSchema
   });
 
 userSchema.methods = {
-  authenticate: function (plainText) {
-    return this.encryptPassword(plainText) === this.hashed_password;
+  authenticate: function (password) {
+    return this.encryptPassword(password) === this.hashed_password;
   },
 
   encryptPassword: function (password) {
@@ -84,7 +84,8 @@ userSchema.methods = {
       return "";
     }
   },
-  makesalt: function () {
+
+  makeSalt: function () {
     return Math.round(new Date().valueOf() * Math.random()) + "";
   },
 };
