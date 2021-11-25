@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { signup } from '../../actions/auth';
+import router from 'next/router';
+import React, { useEffect, useState } from 'react';
+import { isAuth, signup } from '../../actions/auth';
 
 const SignupComponent = () => {
   const [values, setValues] = useState({
@@ -11,6 +12,11 @@ const SignupComponent = () => {
     message: '',
     showForm: true,
   });
+
+  // Redirect to home if signed in
+  useEffect(() => {
+    isAuth() && router.push(`/`);
+  }, []);
 
   // Destructure for easier reference
   const { name, email, password, error, loading, message, showForm } = values;
