@@ -24,11 +24,8 @@ exports.signup = (req, res) => {
         });
       }
       res.json({
-        user: success,
+        message: "Sign up success! Please sign in.",
       });
-      // res.json({
-      //   message: "Signup success! Please signin.",
-      // });
     });
   });
 };
