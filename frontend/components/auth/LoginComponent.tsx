@@ -2,7 +2,7 @@ import router from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { signin, authenticate, isAuth } from '../../actions/auth';
 
-const SignupComponent = () => {
+const LoginComponent = () => {
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -73,7 +73,7 @@ const SignupComponent = () => {
         </div>
 
         <div>
-          <button className="btn btn-primary">Sign In</button>
+          <button className="btn btn-primary">Log In</button>
         </div>
       </form>
     );
@@ -89,4 +89,4 @@ const SignupComponent = () => {
   );
 };
 
-export default SignupComponent;
+export default LoginComponent;
