@@ -9,7 +9,7 @@ export interface CryptoType {
 }
 
 export interface iSimplified {
-  simplified: boolean;
+  simplified?: boolean;
 }
 
 export interface iNews {
