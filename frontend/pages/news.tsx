@@ -1,8 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import News from '../components/News';
 
-const News = () => {
-  return <Layout>News</Layout>;
+const NewsPage = () => {
+  return (
+    <Layout>
+      <News />
+    </Layout>
+  );
 };
 
-export default News;
+export default NewsPage;

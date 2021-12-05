@@ -1,8 +1,13 @@
 import React from 'react';
+import Exchanges from '../components/Exchanges';
 import Layout from '../components/Layout';
 
-const Exchanges = () => {
-  return <Layout>asdasdasdasdasdasdas</Layout>;
+const ExchangesPage = () => {
+  return (
+    <Layout>
+      <Exchanges />
+    </Layout>
+  );
 };
 
-export default Exchanges;
+export default ExchangesPage;

@@ -1,8 +1,13 @@
 import React from 'react';
+import Cryptocurrencies from '../components/Cryptocurrencies';
 import Layout from '../components/Layout';
 
-const Cryptocurrencies = () => {
-  return <Layout>Cryptocurrencies</Layout>;
+const CryptocurrenciesPage = () => {
+  return (
+    <Layout>
+      <Cryptocurrencies />
+    </Layout>
+  );
 };
 
-export default Cryptocurrencies;
+export default CryptocurrenciesPage;

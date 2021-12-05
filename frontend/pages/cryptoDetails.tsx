@@ -1,8 +1,13 @@
 import React from 'react';
+import CryptoDetails from '../components/CryptoDetails';
 import Layout from '../components/Layout';
 
-const CryptoDetails = () => {
-  return <Layout>CryptoDetails</Layout>;
+const CryptoDetailsPage = () => {
+  return (
+    <Layout>
+      <CryptoDetails />
+    </Layout>
+  );
 };
 
-export default CryptoDetails;
+export default CryptoDetailsPage;
