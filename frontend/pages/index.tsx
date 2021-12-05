@@ -12,7 +12,6 @@ const { Title } = Typography;
 
 const Home: NextPage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
-  console.log(process.env.NEXT_PUBLIC_RAPIDAPI_KEY);
   console.log(data);
   const globalStats = data?.data?.stats;
 
