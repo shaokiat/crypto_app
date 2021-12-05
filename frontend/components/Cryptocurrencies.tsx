@@ -6,19 +6,7 @@ import { Card, Row, Col, Input } from 'antd';
 
 import { useGetCryptosQuery } from '../pages/api/cryptoApi';
 
-interface CryptoType {
-  id: string;
-  rank: string;
-  name: string;
-  price: number;
-  marketCap: number;
-  change: number;
-  iconUrl: string;
-}
-
-interface iSimplified {
-  simplified: boolean;
-}
+import { CryptoType, iSimplified } from '../store/types';
 
 const Cryptocurrencies = ({ simplified }: iSimplified) => {
   const count = simplified ? 10 : 100;
@@ -35,7 +23,7 @@ const Cryptocurrencies = ({ simplified }: iSimplified) => {
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]);
 
-  if (isFetching) return <div>Loading...</div>;
+  if (isFetching) return <>Loading...</>;
 
   return (
     <>
@@ -48,15 +36,17 @@ const Cryptocurrencies = ({ simplified }: iSimplified) => {
         {cryptos?.map((currency: CryptoType) => (
           <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
             <Link key={currency.id} href={`/crypto${currency.id}`} passHref>
-              <Card
-                title={`${currency.rank}. ${currency.name}`}
-                extra={<Image alt={currency.name} width={35} height={35} src={currency.iconUrl} />}
-                hoverable
-              >
-                <p>Price: {millify(currency.price)}</p>
-                <p>Market Cap: {millify(currency.marketCap)}</p>
-                <p>Daily Change: {millify(currency.change)}%</p>
-              </Card>
+              <a>
+                <Card
+                  title={`${currency.rank}. ${currency.name}`}
+                  extra={<Image alt={currency.name} width={35} height={35} src={currency.iconUrl} />}
+                  hoverable
+                >
+                  <p>Price: {millify(currency.price)}</p>
+                  <p>Market Cap: {millify(currency.marketCap)}</p>
+                  <p>Daily Change: {millify(currency.change)}%</p>
+                </Card>
+              </a>
             </Link>
           </Col>
         ))}

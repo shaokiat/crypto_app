@@ -57,7 +57,7 @@ const Home: NextPage = () => {
           Latest Crypto News
         </Title>
         <Title level={3} className="home-title">
-          <Link href="/cryptocurrencies">
+          <Link href="/news">
             <a>Show More</a>
           </Link>
         </Title>

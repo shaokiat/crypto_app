@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 const CryptocurrenciesPage = () => {
   return (
     <Layout>
-      <Cryptocurrencies />
+      <Cryptocurrencies simplified={false} />
     </Layout>
   );
 };

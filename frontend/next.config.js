@@ -8,6 +8,6 @@ module.exports = {
     PRODUCTION: false,
   },
   images: {
-    domains: ['cdn.coinranking.com'],
+    domains: ['cdn.coinranking.com', 'www.bing.com'],
   },
 };
