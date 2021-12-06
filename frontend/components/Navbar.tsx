@@ -47,14 +47,14 @@ const Navbar = () => {
           {!isAuth() && (
             <Menu.Item>
               <Link href="/login" passHref>
-                <a>Log In</a>
+                <a onClick={() => setActiveMenu(false)}>Log In</a>
               </Link>
             </Menu.Item>
           )}
           {!isAuth() && (
             <Menu.Item>
               <Link href="/signup" passHref>
-                <a>Sign up</a>
+                <a onClick={() => setActiveMenu(false)}>Sign up</a>
               </Link>
             </Menu.Item>
           )}
@@ -69,22 +69,22 @@ const Navbar = () => {
           )}
           <Menu.Item icon={<HomeOutlined />}>
             <Link href="/">
-              <a>Home</a>
+              <a onClick={() => setActiveMenu(false)}>Home</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>
             <Link href="/cryptocurrencies" passHref>
-              <a>Cryptocurrencies</a>
+              <a onClick={() => setActiveMenu(false)}>Cryptocurrencies</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<MoneyCollectOutlined />}>
             <Link href="/exchanges" passHref>
-              <a>Exchanges</a>
+              <a onClick={() => setActiveMenu(false)}>Exchanges</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
             <Link href="/news" passHref>
-              <a>News</a>
+              <a onClick={() => setActiveMenu(false)}>News</a>
             </Link>
           </Menu.Item>
         </Menu>
