@@ -62,7 +62,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }: ILineChart) => {
           </Title>
         </Col>
       </Row>
-      <Line data={data} options={options} />
+      <Line data={data} />
     </>
   );
 };
