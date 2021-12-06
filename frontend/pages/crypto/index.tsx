@@ -1,6 +1,5 @@
 import React from 'react';
-import CryptoDetails from '../components/CryptoDetails';
-import Layout from '../components/Layout';
+import CryptoDetails from '../../components/CryptoDetails';
 
 const CryptoDetailsPage = () => {
   return (
