@@ -4,9 +4,9 @@ import News from '../components/News';
 
 const NewsPage = () => {
   return (
-    <Layout>
+    <>
       <News />
-    </Layout>
+    </>
   );
 };
 

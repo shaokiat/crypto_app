@@ -4,9 +4,9 @@ import Layout from '../components/Layout';
 
 const CryptoDetailsPage = () => {
   return (
-    <Layout>
+    <>
       <CryptoDetails />
-    </Layout>
+    </>
   );
 };
 

@@ -4,9 +4,9 @@ import Layout from '../components/Layout';
 
 const ExchangesPage = () => {
   return (
-    <Layout>
+    <>
       <Exchanges />
-    </Layout>
+    </>
   );
 };
 

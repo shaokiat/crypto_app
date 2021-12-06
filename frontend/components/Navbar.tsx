@@ -46,21 +46,21 @@ const Navbar = () => {
         <Menu theme="dark">
           {!isAuth() && (
             <Menu.Item>
-              <Link href="/login" passHref>
+              <Link href="login" passHref>
                 <a>Log In</a>
               </Link>
             </Menu.Item>
           )}
           {!isAuth() && (
             <Menu.Item>
-              <Link href="/signup" passHref>
+              <Link href="signup" passHref>
                 <a>Sign up</a>
               </Link>
             </Menu.Item>
           )}
           {isAuth() && (
             <Menu.Item>
-              <Link href="/signout" passHref>
+              <Link href="signout" passHref>
                 <a style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/signin`))}>
                   Sign Out
                 </a>
@@ -73,17 +73,17 @@ const Navbar = () => {
             </Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>
-            <Link href="/cryptocurrencies">
+            <Link href="cryptocurrencies" passHref>
               <a>Cryptocurrencies</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<MoneyCollectOutlined />}>
-            <Link href="/exchanges">
+            <Link href="exchanges" passHref>
               <a>Exchanges</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
-            <Link href="/news">
+            <Link href="news" passHref>
               <a>News</a>
             </Link>
           </Menu.Item>

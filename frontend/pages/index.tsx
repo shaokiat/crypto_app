@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Typography, Row, Col, Statistic } from 'antd';
 import millify from 'millify';
 
-import Layout from '../components/Layout';
 import { useGetCryptosQuery } from './api/cryptoApi';
 import Cryptocurrencies from '../components/Cryptocurrencies';
 import News from '../components/News';
@@ -16,11 +15,11 @@ const Home: NextPage = () => {
   const globalStats = data?.data?.stats;
 
   if (isFetching) {
-    return <div>Loading...</div>;
+    return <>Loading...</>;
   }
 
   return (
-    <Layout>
+    <>
       <Title level={2} className="heading">
         Global Crypto Stats
       </Title>
@@ -63,7 +62,7 @@ const Home: NextPage = () => {
         </Title>
       </div>
       <News simplified />
-    </Layout>
+    </>
   );
 };
 
