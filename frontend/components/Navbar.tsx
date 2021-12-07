@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
 import Link from 'next/link';
-import { useOnClickOutside } from 'usehooks-ts';
 import { APP_NAME } from '../config';
 import { signout, isAuth } from '../actions/auth';
 import { Button, Menu, Typography, Avatar } from 'antd';
