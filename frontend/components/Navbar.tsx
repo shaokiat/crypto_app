@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
 import Link from 'next/link';
+import { useOnClickOutside } from 'usehooks-ts';
 import { APP_NAME } from '../config';
 import { signout, isAuth } from '../actions/auth';
 import { Button, Menu, Typography, Avatar } from 'antd';
@@ -29,6 +30,12 @@ const Navbar = () => {
     }
   }, [screenSize]);
 
+  const closeMobileMenu = () => {
+    if (screenSize <= 800) {
+      setActiveMenu(false);
+    }
+  };
+
   return (
     <div className="nav-container">
       <div className="logo-container">
@@ -43,18 +50,18 @@ const Navbar = () => {
         </Button>
       </div>
       {activeMenu && (
-        <Menu theme="dark">
+        <Menu theme="dark" onBlur={() => closeMobileMenu()}>
           {!isAuth() && (
             <Menu.Item>
               <Link href="/login" passHref>
-                <a onClick={() => setActiveMenu(false)}>Log In</a>
+                <a onClick={() => closeMobileMenu()}>Log In</a>
               </Link>
             </Menu.Item>
           )}
           {!isAuth() && (
             <Menu.Item>
               <Link href="/signup" passHref>
-                <a onClick={() => setActiveMenu(false)}>Sign up</a>
+                <a onClick={() => closeMobileMenu()}>Sign up</a>
               </Link>
             </Menu.Item>
           )}
@@ -69,22 +76,22 @@ const Navbar = () => {
           )}
           <Menu.Item icon={<HomeOutlined />}>
             <Link href="/">
-              <a onClick={() => setActiveMenu(false)}>Home</a>
+              <a onClick={() => closeMobileMenu()}>Home</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>
             <Link href="/cryptocurrencies" passHref>
-              <a onClick={() => setActiveMenu(false)}>Cryptocurrencies</a>
+              <a onClick={() => closeMobileMenu()}>Cryptocurrencies</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<MoneyCollectOutlined />}>
             <Link href="/exchanges" passHref>
-              <a onClick={() => setActiveMenu(false)}>Exchanges</a>
+              <a onClick={() => closeMobileMenu()}>Exchanges</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<BulbOutlined />}>
             <Link href="/news" passHref>
-              <a onClick={() => setActiveMenu(false)}>News</a>
+              <a onClick={() => closeMobileMenu()}>News</a>
             </Link>
           </Menu.Item>
         </Menu>
