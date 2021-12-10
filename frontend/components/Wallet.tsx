@@ -11,7 +11,6 @@ declare global {
     ethereum: MetaMaskInpageProvider;
   }
 }
-
 const { ethereum } = window;
 
 const Wallet = () => {
@@ -21,7 +20,6 @@ const Wallet = () => {
   const [connButtonText, setConnButtonText] = useState('Connect to MetaMask');
 
   const connectWalletHandler = () => {
-    // const provider = await detectEthereumProvider();
     if (typeof ethereum !== 'undefined') {
       console.log('MetaMask is available!');
 
@@ -29,10 +27,10 @@ const Wallet = () => {
         .request({ method: 'eth_requestAccounts' })
         .then((result) => {
           if (result !== undefined) {
-            let result!: Array<string>;
-            accountChangedHandler(result[0]);
+            const account = result as string[];
+            accountChangedHandler(account[0]);
             setConnButtonText('Wallet Connected');
-            getAccountBalance(result[0]);
+            getAccountBalance(account[0]);
           }
         })
         .catch((error) => {
@@ -51,8 +49,8 @@ const Wallet = () => {
   const getAccountBalance = (account: string) => {
     window.ethereum.request({ method: 'eth_getBalance', params: [account, 'latest'] }).then((balance) => {
       if (balance) {
-        let balance!: number;
-        setUserBalance(ethers.utils.formatEther(balance));
+        const balanceLeft = balance as number;
+        setUserBalance(ethers.utils.formatEther(balanceLeft));
       }
     });
   };

@@ -1,12 +1,10 @@
 import React from 'react';
-import Wallet from '../components/Wallet';
+import dynamic from 'next/dynamic';
+
+const Wallet = dynamic(() => import('../components/Wallet'), { ssr: false });
 
 const WalletPage = () => {
-  return (
-    <>
-      <Wallet />
-    </>
-  );
+  return <Wallet />;
 };
 
 export default WalletPage;
