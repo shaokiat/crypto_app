@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import Router from 'next/router';
+// import Router from 'next/router';
 import Link from 'next/link';
 import { APP_NAME } from '../config';
-import { signout, isAuth } from '../actions/auth';
+// import { signout, isAuth } from '../actions/auth';
 import { Button, Menu, Typography, Avatar } from 'antd';
-import { BulbOutlined, FundOutlined, HomeOutlined, MenuOutlined, MoneyCollectOutlined } from '@ant-design/icons';
+import {
+  BulbOutlined,
+  FundOutlined,
+  HomeOutlined,
+  MenuOutlined,
+  MoneyCollectOutlined,
+  WalletOutlined,
+} from '@ant-design/icons';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
@@ -50,7 +57,7 @@ const Navbar = () => {
       </div>
       {activeMenu && (
         <Menu theme="dark" onBlur={() => closeMobileMenu()}>
-          {!isAuth() && (
+          {/* {!isAuth() && (
             <Menu.Item>
               <Link href="/login" passHref>
                 <a onClick={() => closeMobileMenu()}>Log In</a>
@@ -72,10 +79,15 @@ const Navbar = () => {
                 </a>
               </Link>
             </Menu.Item>
-          )}
+          )} */}
           <Menu.Item icon={<HomeOutlined />}>
             <Link href="/">
               <a onClick={() => closeMobileMenu()}>Home</a>
+            </Link>
+          </Menu.Item>
+          <Menu.Item icon={<WalletOutlined />}>
+            <Link href="/wallet">
+              <a onClick={() => closeMobileMenu()}>My Wallet</a>
             </Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>

@@ -1,0 +1,30 @@
+.walletCard {
+  margin: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.metamaskImageContainer {
+  margin: 20px auto 30px auto;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.connectButton {
+  margin-top: 30px;
+  color: #fff;
+  background: #001529;
+}
+
+.connectButton:hover {
+  background-color: #374151;
+}
+
+.connectButton:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
