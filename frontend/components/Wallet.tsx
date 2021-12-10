@@ -29,9 +29,10 @@ const Wallet = () => {
         .request({ method: 'eth_requestAccounts' })
         .then((result) => {
           if (result !== undefined) {
-            accountChangedHandler(result![0]);
+            let result!: Array<string>;
+            accountChangedHandler(result[0]);
             setConnButtonText('Wallet Connected');
-            getAccountBalance(result![0]);
+            getAccountBalance(result[0]);
           }
         })
         .catch((error) => {
@@ -49,7 +50,10 @@ const Wallet = () => {
 
   const getAccountBalance = (account: string) => {
     window.ethereum.request({ method: 'eth_getBalance', params: [account, 'latest'] }).then((balance) => {
-      setUserBalance(ethers.utils.formatEther(balance));
+      if (balance) {
+        let balance!: number;
+        setUserBalance(ethers.utils.formatEther(balance));
+      }
     });
   };
 
